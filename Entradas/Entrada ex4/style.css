@@ -1,0 +1,41 @@
+
+#forms
+{
+    background-image: linear-gradient( 135deg, #16012b, #29054e, #360468, #3e0874 );;
+    width: 30%;
+    height: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 10px;
+}
+#quest
+{
+    width: 40%;
+    margin-left: auto;
+    margin-right: auto;
+}
+#quest input
+{
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+#quest button
+{
+    width: 100%;
+}
+#quest label
+{
+    color: white;
+    font-size: 30px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+label 
+{
+    margin-left: auto;
+    margin-right: auto;
+}
+#center
+{
+    margin-left: auto;
+    margin-right: auto;
+}
