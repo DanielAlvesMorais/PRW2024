@@ -1,0 +1,48 @@
+USE IFSP;
+CREATE TABLE Cidade ( #Criar as tabelas "Cidade";
+id int auto_increment ,
+nome varchar(50),
+estado varchar(2),
+primary key (id)
+);
+
+CREATE TABLE Cliente ( #Criar as tabelas “Cliente";
+id int auto_increment ,
+nome varchar(50),
+email varchar(50),
+senha varchar (10),
+ativo bool,
+id_cidade int,
+primary key (id),
+CONSTRAINT FK_ClienteCidade FOREIGN KEY (id_cidade) REFERENCES Cidade(id)
+);
+
+INSERT INTO Cidade (nome, estado) VALUES #Inserir cinco cidades na tabela “Cidade”;
+('São Paulo','SP'),
+('São Carlos','SP'),
+('Rio de Janeiro','RJ'),
+('Rio Branco','AC'),
+('Campinas','SP'),
+('Belo Horizonte','MG');
+
+SELECT nome FROM Cidade WHERE estado = 'SP'; #Fazer um consulta para exibir todas a cidades doestado de “SP”;
+
+INSERT INTO Cliente (nome, email, senha, ativo, id_cidade) VALUES #Inserir cinco clientes na tabela “Cliente”
+('Daniel Alves de Morais','teste1@gmail.com', '1', NULL, 1),
+('Nícolas Eduardo','teste2@gmail.com', '1', NULL, 1),
+('Eduardo Pereira','teste3@gmail.com', '1', NULL, 2),
+('João Vitor','teste4@gmail.com', '1', NULL, 3),
+('Guilherme Correia','teste5@gmail.com', '1', NULL, 1);
+
+SELECT nome FROM Cliente WHERE id_cidade = 1; #Fazer uma consulta para exibir todos os clientesdacidade com id igual a1;
+
+UPDATE Cidade SET nome = 'Bauru' WHERE id = 1; #Alterar o nome da Cidade comid igual a 1 paraBauru;
+
+UPDATE Cliente SET nome = 'Cássio Stersi' WHERE id = 1; #Alterar o nome do Cliente comid igual a 1 paraCássioStersi;
+
+UPDATE Cliente SET id_cidade = 1 WHERE id_cidade = 4;
+DELETE FROM Cidade WHERE id = 4; #Deletar a cidade com id igual a 4;
+
+DELETE FROM Cliente WHERE id = 1; #Deletar o cliente com id igual a 1;
+
+DELETE FROM cliente WHERE id = 1; #Deletar o cliente com id igual a 1
